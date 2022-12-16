@@ -1,0 +1,7 @@
+bem, esse mini projeto foi na intenção de treinar:
+
+loops (while e for)
+ifs e switch
+vetores
+funções
+entendimento melhor da memoria

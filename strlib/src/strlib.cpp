@@ -1,7 +1,5 @@
 #include "strlib.hpp"
 
-
-using namespace strlib;
 namespace strlib {
 	int strlen(const char* string) {
 		/*
@@ -177,7 +175,6 @@ namespace strlib {
 		}
 	}
 
-
 	void replaceChar(char* string, const char oldChar, const char newChar) {
 		int i = 0;
 		while (string[i] != '0') {
@@ -186,6 +183,30 @@ namespace strlib {
 			}
 			i++;
 		}
+	}
+	
+	void strcat(char* dest, const char* source, int maxlength) {
+		// pega o local do ultimo caractere da string e armazena em 'dest_ultimo_char'
+		int dest_ultimo_char = (strlib::strlen(dest)),
+			i = 0;
+
+		while (dest_ultimo_char < (maxlength-1) && source[i] != '\0') {
+			dest[dest_ultimo_char] = source[i];
+			i++;
+			dest_ultimo_char++;
+		}
+		// Indica o final da string
+		dest[dest_ultimo_char] = '\0';
+	}
+
+	void strcpy(char* dest, const char* source, int maxlength) {
+		int i = 0;
+
+		while (i < maxlength-1 && source[i] != '\0') {
+			dest[i] = source[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
 }
 
